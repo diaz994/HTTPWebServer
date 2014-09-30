@@ -89,4 +89,56 @@ public class ResponseMessageHandler {
             System.err.println(ioException.getMessage());
         }
     }
+
+    public static void Error404Message(File file, DataOutputStream responseToClient) {
+        String htmlData = "";
+        String responseData = "";
+
+        responseData = Constants.HTTP_RESPONSE_NOT_FOUND;
+        responseData += Constants.HTTP_RESPONSE_HEADER_CONTENT_TYPE_HTML;
+
+        file = new File(Constants.HTTP_ERROR_404_FILE);
+        try {
+            InputStream inputStream = new FileInputStream(file);
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+            String fileLines = null;
+
+            while((fileLines = reader.readLine()) != null) {
+                htmlData += fileLines;
+            }
+
+            responseToClient.writeBytes(responseData + htmlData);
+
+        } catch(IOException ioException) {
+            System.err.println(ioException.getMessage());
+        }
+    }
+
+    public static void BadRequest400Message(File file, DataOutputStream responseToClient) {
+        String htmlData = "";
+        String responseData = "";
+
+        responseData = Constants.HTTP_RESPONSE_BAD_REQUEST;
+        responseData += Constants.HTTP_RESPONSE_HEADER_CONTENT_TYPE_HTML;
+
+        file = new File(Constants.HTTP_BAD_REQUEST_400_FILE);
+        try {
+            InputStream inputStream = new FileInputStream(file);
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+            String fileLines = null;
+
+            while((fileLines = reader.readLine()) != null) {
+                htmlData += fileLines;
+            }
+
+            responseToClient.writeBytes(responseData + htmlData);
+
+        } catch(IOException ioException) {
+            System.err.println(ioException.getMessage());
+        }
+    }
 }

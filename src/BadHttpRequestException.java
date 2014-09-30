@@ -1,5 +1,5 @@
-/**
- * Created by diaz994 on 9/27/2014.
+/***
+ * An empty BadHttpRequestException class.
  */
 public class BadHttpRequestException extends Exception {
 }

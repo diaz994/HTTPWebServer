@@ -1,7 +1,15 @@
-/**
- * Created by diaz994 on 9/27/2014.
+/***
+ * Victor Diaz
+ * 1000858671
+ * September 30, 2014
  */
 public class Utils {
+
+    /***
+     *
+     * @param path
+     * @return
+     */
     public static String ParseFilePath(String path)
     {
         // Remove any unnecessary ending slashes typed by the user
@@ -34,14 +42,11 @@ public class Utils {
         return path;
     }
 
-    /**
-     * Name       : CountOccurencesOf
-     * Input      : s as String, c as char
-     * Output     : Number of occurrences of a char
-     * Description: Count the number of occurrences of a char in a string
+    /***
+     *
      * @param s
      * @param c
-     * @return integer
+     * @return
      */
     public static int CountOccurrencesOf(String s, char c)
     {
@@ -62,13 +67,10 @@ public class Utils {
         return count;
     }
 
-    /**
-     * Name       : GetFileNameOnly
-     * Input      : Complete path of the file, including name
-     * Output     : File name without path info
-     * Description: Gets the file name without path info
+    /***
+     *
      * @param path
-     * @return path
+     * @return
      */
     public static String GetFileNameOnly(String path)
     {
@@ -86,11 +88,8 @@ public class Utils {
         }
     }
 
-    /**
-     * Name       : GetContentType
-     * Input      : File name to parse to get content type; eg: html/text, image
-     * Output     : Content type as string
-     * Description: Parses file name to get the content type
+    /***
+     *
      * @param filename
      * @return
      */
@@ -108,7 +107,10 @@ public class Utils {
         String switchCondition = filename.substring(filename.indexOf("."));
         if (switchCondition.equals(".html") || switchCondition.equals(".txt") || switchCondition.equals(".htm")) {
             return "text/html";
-        } else if (switchCondition.equals(".jpg") || switchCondition.equals(".jpeg") || switchCondition.equals(".jp3") || switchCondition.equals(".jfif") || switchCondition.equals(".png") || switchCondition.equals(".gif") || switchCondition.equals(".bmp") || switchCondition.equals(".dib") || switchCondition.equals(".tif") || switchCondition.equals(".tiff") || switchCondition.equals(".ico")) {
+        } else if (switchCondition.equals(".jpg") || switchCondition.equals(".jpeg") || switchCondition.equals(".jp3")
+                || switchCondition.equals(".jfif") || switchCondition.equals(".png") || switchCondition.equals(".gif")
+                || switchCondition.equals(".bmp") || switchCondition.equals(".dib") || switchCondition.equals(".tif")
+                || switchCondition.equals(".tiff") || switchCondition.equals(".ico")) {
             return "image";
 
             // Also return text/html for all the other file types
@@ -117,13 +119,10 @@ public class Utils {
         }
     }
 
-    /**
-     * Name       : FindHostHeaderLine
-     * Input      : requestMsg as array of strings
-     * Output     : Host header as string
-     * Description: Returns the header line that contains host information
+    /***
+     *
      * @param requestMsg
-     * @return string/null
+     * @return
      */
     public static String FindHostHeaderLine(String [] requestMsg)
     {
